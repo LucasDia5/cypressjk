@@ -19,7 +19,7 @@ pipeline{
          stage('DeplTestingoying'){
             steps{
                 sh "npm i"
-                sh "npx cypress run --browser ${BROWSER} --spec${SPEC}"
+                sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
             }
         }
 
