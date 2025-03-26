@@ -20,7 +20,7 @@ pipeline{
             steps{
                 sh "npm i"
                 sh "npm install cypress"
-                sh "npx cypress run --spec ${SPEC}"
+                sh "npx cypress run --spec cypress/e2e/spec.cy.js"
             }
         }
 
