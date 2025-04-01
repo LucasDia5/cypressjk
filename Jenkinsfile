@@ -13,7 +13,8 @@ pipeline{
 
     stage('install cypress'){
             steps{
-                sh "npm ci"  
+                //sh "npm ci"  
+                sh "npm install --registry https://registry.npmjs.org"
                 sh "npx cypress verify"
                 sh "npm install cypress"
             }
