@@ -11,10 +11,17 @@ pipeline{
             
         }
 
+    stage('install cypress'){
+            steps{
+                sh "npm ci"  
+                sh "npx cypress verify"
+                sh "npm install cypress"
+            }
+        }
+        
+
          stage('Testing'){
             steps{
-                sh "npm i"
-                sh "npm install cypress"
                 sh "npx cypress run --spec cypress/e2e/spec.cy.js"
             }
         }
